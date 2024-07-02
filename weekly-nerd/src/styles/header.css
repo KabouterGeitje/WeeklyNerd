@@ -1,0 +1,342 @@
+header {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: var(--background-color-header);
+  z-index: 2;
+  transform: translateY(-100%);
+  transition: 0.5s;
+
+  nav {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 5em;
+
+    /* Dit doe ik zodat je niet al door het navigatie menu gaat wanneer de hamburgermenu gesloten is */
+    span,
+    li,
+    a {
+      display: none;
+    }
+
+    button {
+      position: absolute;
+      width: 4em;
+      height: 4em;
+      background-color: transparent;
+      border: none;
+      bottom: -7em;
+      right: 2em;
+    }
+
+    button:before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 15%;
+      top: 0;
+      left: 0;
+      background-color: var(--font-color-header);
+      border-radius: 10px;
+      z-index: -1;
+    }
+
+    button:after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 15%;
+      left: 0;
+      top: 50%;
+      background-color: var(--font-color-header);
+      border-radius: 10px;
+      z-index: -1;
+    }
+
+    button:hover::after, button:hover::before{
+      background-color: var(--accent-color-hover);
+    }
+
+    button:focus::after, button:focus::before{
+        outline: 4px solid var(--accent-color-hover-light);
+    }
+
+    label {
+      position: absolute;
+      width: 4em;
+      height: 2.2em;
+      border: solid 2px var(--font-color-header);
+      border-radius: 50px;
+      bottom: -4.7em;
+      right: 6.8em;
+    }
+
+    label:after{
+      content: "\2600";
+      rotate: 180deg;
+      position: absolute;
+      color: white;
+      font-size: 20px;
+      background-color: transparent;
+      left: 7.3px;
+      top: 3.5px;
+      transition: 0.5s;
+    }
+
+    label:before{
+      content: '';
+      position: absolute;
+      color: white;
+      background-color: var(--accent-color-focus);
+      border-radius: 50%;
+      width: 46%;
+      height: 90%;
+      left: 2px;
+      transform: translateY(1.38px);
+      transition: 0.5s;
+    }
+
+    input:checked + label:after{
+      content: "\262A";
+      color: var(--background-color-header);
+      left: 58.5%;
+    }
+
+    input:checked + label:before{
+      left: 50%;
+      background-color: var(--font-color);
+    }
+
+    /* zoals Sara Soueidan heeft uitgelegd hoe je de checkbox invisible maakt
+    zonder dat je de checkbox niet meer kunt vinden */
+    #darkmode-toggle {
+      position: absolute;
+      opacity: 0;
+    }
+
+    label:hover, label:focus{
+      outline: 4px solid var(--accent-color-focus);
+    }
+
+    #darkmode-toggle:has(:focus) label{
+      outline: 4px solid var(--accent-color-focus);
+    }
+
+    a {
+      width: fit-content;
+      justify-self: end;
+    }
+
+    a:focus:has(span) span::before{
+      transform: translateX(2%);
+      transition: 0.5s;
+    }
+
+    a:focus:has(span) span::after{
+      width: 100%;
+      transition: 0.5s;
+    }
+
+    a:focus:has(span) span{
+      transform: translateX(-2%);
+      transition: 0.5s;
+    }
+
+    span {
+      width: max-content;
+      position: relative;
+      font-family: "Clipper";
+      font-size: var(--font-size-h3);
+      color: var(--accent-color-focus);
+      display: block;
+      transition: 0.5s;
+    }
+
+    span:before {
+      content: "Weekly Nerd";
+      position: absolute;
+      color: var(--font-color-header); 
+      transition: 0.5s;
+    }
+
+    span:hover::before {
+      transform: translateX(2%);
+      transition: 0.5s; 
+    }
+
+    span:after {
+      content: "";
+      position: absolute;
+      bottom: -0.5em;
+      right: 0;
+      width: 0%;
+      height: 2px;
+      background-color: var(--accent-color-focus);
+      transition: 0.5s;
+    }
+
+    span:hover {
+      transform: translateX(-2%);
+      transition: 0.5s;
+      color: var(--accent-color-hover);
+    }
+
+    ul {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 6rem;
+
+      li {
+        position: relative;
+        width: max-content;
+        font-size: var(--font-size-h4);
+        font-family: "Playwrite";
+
+        a {
+          --font-color: var(--font-color-header);
+        }
+      }
+
+      li:nth-of-type(1):before {
+        content: "Home";
+        position: absolute;
+        color: var(--accent-color-focus);
+        transition: 0.5s;
+        z-index: -1;
+      }
+
+      li:nth-of-type(2):before {
+        content: "Sprekers";
+        position: absolute;
+        color: var(--accent-color-focus);
+        transition: 0.5s;
+        z-index: -1;
+      }
+
+      li:nth-of-type(3):before {
+        content: "Mijn Ontwikkeling";
+        position: absolute;
+        color: var(--accent-color-focus);
+        transition: 0.5s;
+        z-index: -1;
+      }
+
+      li:hover::before {
+        transform: translateX(2%);
+        transition: 0.5s;
+        color: var(--accent-color-hover);
+      }
+
+      li:nth-of-type(3):hover::before {
+        transform: translateX(1%);
+        transition: 0.5s;
+        color: var(--accent-color-hover);
+      }
+
+      li:after {
+        content: "";
+        position: absolute;
+        bottom: -0.5em;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background-color: var(--accent-color-focus);
+        transition: 0.5s;
+      }
+
+      li:has(a:focus)::after
+      {
+        width: 100%;
+        transition: 0.5s;
+      }
+
+      li:has(a:focus)::before{
+        transform: translateX(2%);
+        transition: 0.5s;
+      }
+
+      li:nth-of-type(3):has(a:focus)::before{
+        transform: translateX(1%);
+        transition: 0.5s;
+      }
+    }
+  }
+}
+
+header.open {
+  transform: translateY(0%);
+
+  span,
+  li,
+  a {
+    display: block;
+  }
+
+  label,
+  #darkmode-toggle{
+    display: none;
+  }
+
+  button {
+    top: 0;
+    right: 0;
+    margin-top: 2.5em;
+    margin-right: 3em;
+  }
+
+  button:before {
+    left: 0;
+    top: 50%;
+    transform: rotate(45deg);
+  }
+
+  button:after {
+    left: 0;
+    top: 50%;
+    transform: rotate(-45deg);
+  }
+
+  .dark-light-mode{
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  header {
+    nav {
+      gap: 0em;
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr;
+
+      button{
+        bottom: -6.8em;
+      }
+
+      label{
+        bottom: -4.55em;
+      }
+
+      a {
+        justify-self: center;
+      }
+
+      ul {
+        justify-self: center;
+        gap: 3rem;
+        align-self: start;
+        align-items: center;
+      }
+    }
+  }
+
+  /* hamburger button mooi positioneren als het menu open is */
+  header.open {
+    button{
+      bottom: -6em;
+    }
+  }
+}

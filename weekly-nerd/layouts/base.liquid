@@ -1,0 +1,29 @@
+<html lang="nl-NL">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% block head %}
+    {% endblock %}
+    <title>
+      {{ titel }}
+    </title>
+  </head>
+
+  <body>
+    {% include "partials/header.liquid" %}
+
+    <main>
+      {% block content %}
+      {% endblock %}
+    </main>
+
+    {% comment %} {% include "partials/footer.liquid" %} {% endcomment %}
+     <script src="/js/disableAnimation.js"></script>
+     <script src="/js/hamburgerMenu.js"></script>
+     <script src="/js/dark-light-mode.js"></script>
+  </body>
+
+</html>

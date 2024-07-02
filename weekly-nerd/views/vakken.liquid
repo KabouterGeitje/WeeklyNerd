@@ -1,0 +1,19 @@
+{% layout "layouts/base.liquid" %}
+
+{% block content %}
+  <div class="main-container-vakken">
+    <h1 class="hiddenh1">
+      {{ titel }}
+    </h1>
+    <h2>{{ vak.titel }}</h2>
+    {% for content in vak.content %}
+      <p>{{ content }}</p>
+    {% endfor %}
+    {% for tekst in vak.conclusie %}
+      <p>{{ tekst }}</p>
+    {% endfor %}
+    {% for img in vak.imgUrl %}
+      <img src="{{ img }}" alt="">
+    {% endfor %}
+  </div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% layout "layouts/base.liquid" %}
+
+{% block head %}
+  <link rel="stylesheet" href="/styles/{{ spreker.url }}.css">
+{% endblock %}
+
+{% block content %}
+<div class="main-container-sprekers">
+  <h1>
+    {{ titel }}
+  </h1>
+  <h2>{{ spreker.titel }}</h2>
+  {% for content in spreker.content %}
+    <p>{{ content }}</p>
+  {% endfor %}
+  <h3>Conclusie</h3>
+  {% for tekst in spreker.conclusie %}
+    <p>{{ tekst }}</p>
+  {% endfor %}
+  {% if spreker.lijst %}
+    <h3>Interessante punten</h3>
+   <ul class="list">
+      {% for item in spreker.lijst %}
+      <li>{{ item }}</li>
+      {% endfor %}
+    </ul> 
+  {% endif %}
+  </div>
+{% endblock %}

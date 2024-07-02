@@ -1,0 +1,49 @@
+/* import Ubuntu fonts */
+
+@font-face {
+	font-family: 'Ubuntu Regular';
+	src: url(../fonts/Ubuntu/Ubuntu-Regular.ttf);
+	type: truetype;
+}
+
+@font-face {
+	font-family: 'Ubuntu Light';
+	src: url(../fonts/Ubuntu/Ubuntu-Light.ttf);
+	type: truetype;
+}
+
+@font-face {
+	font-family: 'Ubuntu Bold';
+	src: url(../fonts/Ubuntu/Ubuntu-Bold.ttf);
+	type: truetype;
+}
+
+@font-face {
+	font-family: 'Ubuntu Italic';
+	src: url(../fonts/Ubuntu/Ubuntu-Italic.ttf);
+	type: truetype;
+}
+
+/* import clipper fonts */
+
+@font-face {
+	font-family: 'Clipper';
+	src: url(../fonts/clipper-font/ClipperPersonalUse-Bg13.ttf);
+	type: truetype;
+}
+
+/* import Playwrite MX fonts */
+
+@font-face {
+	font-family: 'Playwrite';
+	src: url(../fonts/Playwrite_MX/PlaywriteMX-VariableFont_wght.ttf);
+	type: truetype;
+}
+
+/* import Yeseva One fonts */
+
+@font-face {
+	font-family: 'Yeseva';
+	src: url(../fonts/Yeseva_One/YesevaOne-Regular.ttf);
+	type: truetype;
+}

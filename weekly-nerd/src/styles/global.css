@@ -1,0 +1,153 @@
+@import url(fonts.css);
+@import url(header.css);
+@import url(footer.css);
+@import url(index.css);
+@import url(breadcrumbs.css);
+@import url(detail.css);
+@import url(vakken.css);
+@import url(sprekers.css);
+
+:root {
+  --font-color-header: #352629;
+  --accent-color: #fd94da;
+  --accent-color-hover: #f9443d;
+  --accent-color-focus: #f9443d;
+  --background-color-header: #eaebe5;
+  --accent-color-hover-light: #fd94da;
+
+  --font-size-h1: clamp(3rem, 8vw, 5rem);
+  --font-size-h2: clamp(2rem, 6vw, 5rem);
+  --font-size-h3: clamp(1.6rem, 2.5vw, 3rem);
+  --font-size-h4: clamp(1rem, 1.5vw, 1.8rem);
+
+  --font-color: #352629;
+
+  --footerheight: calc(10dvh + clamp(3rem, 10vh, 5%));
+}
+
+html {
+  background-color: white;
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@supports selector(:has(*)) {
+  *:focus {
+    outline: none;
+  }
+}
+
+body {
+  background-color: var(--background-color-header);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  overflow-x: hidden;
+  color: var(--font-color);
+  transition: all .5s;
+}
+
+.resize-animation-stopper * {
+  animation: none !important;
+  transition: none !important;
+}
+
+main {
+  width: 90dvw;
+  /* margin-bottom: var(--footerheight); */
+  display: flex;
+  padding-bottom: 5%;
+  flex-direction: column;
+  align-items: center;
+}
+
+main.open {
+  display: none;
+}
+
+.main-container, .main-container-detail {
+  padding-top: 10em;
+  width: 100%;
+  align-self: center;
+}
+
+img {
+  width: 100%;
+}
+/* blokjes achtergrond op de main, ik vind het leuk, maar niet voor mijn website, ik laat de code wel staan voor het geval
+ik het ooit wil gebruiken in de toekomst */
+
+/* main:before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+        background-image: 
+        conic-gradient(
+        var(--accent-color-focus) 0% 25%,
+        var(--font-color-header)25% 50%,
+        var(--accent-color-focus) 50% 75%,
+        var(--font-color-header) 75% 100%);
+    background-size: 5em 5em; 
+    background-position: center;
+    opacity: 0.8;
+    z-index: -1;
+} */
+
+a {
+  font-size: var(--font-size-h4);
+  color: var(--font-color);
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--font-color);
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+h1 {
+  font-family: "Clipper";
+  letter-spacing: 0.1em;
+  font-size: var(--font-size-h3);
+  place-self: center;
+}
+
+h2 {
+  font-family: "Clipper";
+  font-size: var(--font-size-h3);
+}
+
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 1em;
+}
+
+/* dark-mode en light-mode toggle */
+
+html:has(#darkmode-toggle:checked){
+  --font-color-header: #eaebe5;
+  --accent-color: #fb5f5a;
+  --accent-color-hover: #be30ce;
+  --accent-color-focus: #be30ce;
+  --background-color-header: #352629;
+  --accent-color-hover-light: #fb5f5a;
+  --font-color: #eaebe5;
+  
+  .blob{
+    background-image: radial-gradient(circle, var(--image-color-secondary) 0% 10%, var(--image-color) 20% 40%, transparent 50% 100%);
+  }
+}

@@ -1,0 +1,289 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+  h1 {
+    margin-bottom: 1em;
+    
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: "Yeseva";
+    place-self: start;
+  }
+
+  h2 {
+    font-size: var(--font-size-h3);
+    letter-spacing: 0.1em;
+    margin-top: 1em;
+  }
+
+  h3 {
+    margin-top: 1em;
+  }
+}
+
+.sprekers-vakken {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  transition: 0.5s;
+  gap: 1em;
+
+  div {
+    display: flex;
+    position: relative;
+    place-items: center;
+
+    width: 100%;
+    height: 10em;
+    background-color: var(--accent-color-hover);
+    border-radius: 10px;
+
+    h2 {
+      font-family: "Playwrite";
+      letter-spacing: 0;
+      margin: 0;
+      z-index: 1;
+      width: 12ch;
+      padding-left: 1em;
+      place-self: center;
+    }
+
+    .blob {
+      position: absolute;
+      width: clamp(4em, 5em, 10em);
+      height: clamp(4em, 5em, 10em);
+      right: 1em;
+      background-image: radial-gradient(
+        circle,
+        var(--image-color) 0% 10%,
+        var(--image-color-secondary) 20% 40%,
+        transparent 50% 100%
+      );
+      background-color: transparent;
+      filter: blur(20px);
+    }
+  }
+
+  a:focus div {
+    outline: solid 4px var(--font-color);
+  }
+
+  a:focus .blob {
+    outline: none;
+  }
+
+  div:hover {
+    background-color: var(--accent-color-hover-light);
+  }
+}
+
+/* styling leerdoelen, reflectie en toekomst */
+.tekst-container {
+    display: grid;
+    width: 80%;
+    place-self: center;
+    margin-top: 3em;
+    padding: 5em;
+    padding-top: 1em;
+    border-radius: 10px;
+    background-color: var(--accent-color);
+    
+  .leerdoelen,
+  .reflectie,
+  .toekomst {
+    max-width: 90ch;
+  }
+
+  .reflectie {
+    justify-self: end;
+  }
+}
+
+/* styling kaartje per spreker */
+
+.kilian {
+  --image-color: rgb(254, 145, 61);
+  --image-color-secondary: rgb(255, 223, 176);
+}
+
+.fenna {
+  --image-color: rgb(26, 129, 255);
+  --image-color-secondary: rgb(187, 202, 255);
+}
+
+.jeffrey {
+  --image-color: rgb(0, 178, 127);
+  --image-color-secondary: rgb(174, 255, 232);
+}
+
+.nils {
+  --image-color: rgb(242, 0, 255);
+  --image-color-secondary: rgb(214, 144, 255);
+}
+
+.jeremy {
+  --image-color: rgb(255, 0, 200);
+  --image-color-secondary: rgb(255, 151, 208);
+}
+
+.julia {
+  --image-color: rgb(0, 224, 236);
+  --image-color-secondary: rgb(165, 255, 246);
+}
+
+.mariekepim {
+  --image-color: rgb(0, 8, 255);
+  --image-color-secondary: rgb(158, 184, 255);
+}
+
+.rosa {
+  --image-color: rgb(255, 0, 217);
+  --image-color-secondary: rgb(248, 184, 239);
+}
+
+.robert {
+  --image-color: rgb(60, 255, 21);
+  --image-color-secondary: rgb(195, 255, 179);
+}
+
+.dewaag {
+  --image-color: rgb(60, 60, 60);
+  --image-color-secondary: rgb(198, 198, 198);
+}
+
+.q42 {
+  --image-color: rgb(255, 136, 0);
+  --image-color-secondary: rgb(254, 198, 165);
+}
+
+.bramus {
+  --image-color: rgb(255, 238, 0);
+  --image-color-secondary: rgb(253, 240, 159);
+}
+
+.miriam {
+  --image-color: rgb(187, 243, 255);
+  --image-color-secondary: rgb(0, 255, 238);
+}
+
+.kilian,
+.fenna,
+.jeffrey,
+.nils,
+.jeremy,
+.julia,
+.mariekepim,
+.rosa,
+.robert,
+.dewaag,
+.q42,
+.bramus,
+.miriam {
+  .blob {
+    clip-path: polygon(
+      50% 0%,
+      61% 35%,
+      98% 35%,
+      68% 57%,
+      79% 91%,
+      50% 70%,
+      21% 91%,
+      32% 57%,
+      2% 35%,
+      39% 35%
+    );
+  }
+}
+
+/* styling kaartje per vak */
+
+.wafs {
+  --image-color: rgb(255, 0, 102);
+  --image-color-secondary: rgb(255, 207, 221);
+  .blob {
+    clip-path: polygon(30% 0%, 0% 41%, 50% 100%, 100% 39%, 75% 0%, 51% 22%);
+  }
+}
+
+.css {
+  --image-color: rgb(153, 0, 255);
+  --image-color-secondary: rgb(226, 182, 255);
+}
+
+.browser-technologies {
+  --image-color: rgb(255, 157, 0);
+  --image-color-secondary: rgb(255, 226, 162);
+}
+
+.hacketon {
+  --image-color: rgb(0, 255, 136);
+  --image-color-secondary: rgb(157, 255, 203);
+}
+
+.human-centered-design {
+  --image-color: rgb(15, 51, 255);
+  --image-color-secondary: rgb(169, 175, 255);
+}
+
+.api {
+  --image-color: rgb(255, 0, 195);
+  --image-color-secondary: rgb(255, 174, 236);
+}
+
+.meesterproef {
+  --image-color: rgb(255, 111, 0);
+  --image-color-secondary: rgb(255, 198, 162);
+}
+
+.wafs,
+.css,
+.browser-technologies,
+.hacketon,
+.human-centered-design,
+.api,
+.meesterproef {
+  .blob {
+    clip-path: polygon(
+      50% 0%,
+      65% 15%,
+      85% 15%,
+      85% 35%,
+      100% 50%,
+      85% 65%,
+      85% 85%,
+      65% 85%,
+      50% 100%,
+      35% 85%,
+      15% 85%,
+      15% 65%,
+      0% 50%,
+      15% 35%,
+      15% 15%,
+      35% 15%
+    );
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .main-container {
+    margin-top: 3em;
+  }
+
+  .main-container-detail {
+    margin-top: 5em;
+  }
+
+  .tekst-container{
+    width: 100%;
+    padding: 1em;
+    padding-top: 0.5em;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .sprekers-vakken {
+    grid-template-columns: 1fr;
+  }
+}

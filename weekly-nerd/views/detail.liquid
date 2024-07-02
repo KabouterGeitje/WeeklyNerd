@@ -1,0 +1,53 @@
+{% layout "layouts/base.liquid" %}
+
+{% block content %}
+  <div class="main-container">
+    <h1>
+      {{ secondTitel }}
+    </h1>
+
+    <section class="sprekers-vakken">
+      {% for card in content %}
+        {% comment %} url wordt sprekers, card.url wordt de naam van de spreker en card.naam wordt de volledige naam van de spreker
+                   Hetzelfde gebeurd bij de vakken {% endcomment %}
+        <a href="/{{ url }}/{{ card.url }}">
+        <div class="{{ card.url }}"> 
+          <h2>{{ card.naam  }}</h2>
+          <div class="blob"></div>
+        </div></a>
+      {% endfor %}
+    </section>
+    
+    {% if leerdoelen %}
+      <section class="tekst-container">
+        {% if leerdoelen %}
+          <section class="leerdoelen">
+            <h2>leerdoelen</h1>
+            {% for leerdoel in leerdoelen %}
+              <h3>{{ leerdoel.titel }}</h3>
+              <p>{{ leerdoel.content }}</p>
+            {% endfor %}
+          </section>
+        {% endif %}
+    
+        {% if reflectie %}
+          <section class="reflectie">
+            <h2>Reflectie</h1>
+            {% for stukje in reflectie %}
+              <p>{{ stukje }}</p>
+            {% endfor %}
+          </section>
+        {% endif %}
+    
+        {% if toekomst %}
+          <section class="toekomst">
+            <h2>toekomst</h1>
+            {% for stukje in toekomst %}
+                <p>{{ stukje }}</p>
+              {% endfor %}
+            {% endif %}
+          </section>
+      </div>
+      </section>
+    {% endif %}
+{% endblock %}

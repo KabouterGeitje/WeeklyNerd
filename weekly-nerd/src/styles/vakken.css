@@ -1,0 +1,31 @@
+.main-container-vakken{
+    width: 90%;
+    padding: 2em;
+    background-color: var(--accent-color);
+    border-radius: 10px;
+    column-count: 2;
+    margin-top: 10em;
+
+    .hiddenh1{
+        position: absolute;
+        opacity: 0;
+    }
+
+    h2{
+        font-family: "Yeseva";
+    }
+
+    img{
+        border-radius: 10px;
+        margin-top: 2em;
+    }
+    
+}
+
+@media only screen and (max-width: 850px){
+    .main-container-vakken{
+        width: 100%;
+        column-count: 1;
+        margin-top: 15em;
+    }
+}

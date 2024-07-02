@@ -1,0 +1,27 @@
+.main-container-sprekers{
+    column-count: 2;
+    margin-top: 10em;
+
+    h2{
+        color: var(--accent-color);
+        font-family: "Yeseva";
+        margin: 0.2em;
+    }
+    
+    h3{
+        margin-top: 1em;
+    }
+
+    .list{
+        list-style: disc;
+        padding: 1em;
+    }
+}
+
+@media only screen and (max-width: 850px){
+    .main-container-sprekers{
+        width: 100%;
+        column-count: 1;
+        margin-top: 15em;
+    }
+}

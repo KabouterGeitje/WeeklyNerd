@@ -1,0 +1,16 @@
+{
+  "name": "test",
+  "private": true,
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@tinyhttp/app": "^2.2.3",
+    "@tinyhttp/logger": "latest",
+    "liquidjs": "^10.13.1",
+    "path": "^0.12.7",
+    "serve-static": "^1.15.0",
+    "url": "^0.11.3"
+  },
+  "type": "module"
+}
